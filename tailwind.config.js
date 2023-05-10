@@ -13,6 +13,7 @@ module.exports = {
       'offwhite' : '#ececf2',
       'gptgreen' : '#13b78a',
       'gptlight' : '#ececf1',
+      'gptgreend' :'#10A37F'
 
     }
     },
