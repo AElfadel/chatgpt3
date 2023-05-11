@@ -16,6 +16,7 @@ module.exports = {
       'gptlight' : '#ececf1',
       'gptgreend' :'#10A37F',
       'darkwhite' : '#8e8ea0',
+      'gptblack' : '#050509',
     }
     },
   },

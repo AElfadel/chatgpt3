@@ -24,7 +24,7 @@ export default async function RootLayout({
   const session = await getServerSession(authOptions);
 
   return (
-    <html lang="ar" dir="rtl" className="overflow-y-clip overscroll-contain">
+    <html lang="ar" dir="rtl" className="">
       <body className={noto.className}>
         {/*PROVIDER MUST BE INSIDE THE BODY, NOT OUTSIDE*/}
         <Provider session={session}>
@@ -38,7 +38,6 @@ export default async function RootLayout({
               <div className="flex-1">{children}</div>
             </div>
           )}
-          ;
         </Provider>
       </body>
     </html>
