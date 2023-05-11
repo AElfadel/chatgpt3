@@ -32,7 +32,7 @@ export default async function RootLayout({
             <SignIn />
           ) : (
             <div className="flex">
-              <div className="min-h-screen overscroll-none">
+              <div className="min-h-screen overscroll-none hidden sm:block">
                 <SideBar />
               </div>
               <div className="flex-1">{children}</div>
