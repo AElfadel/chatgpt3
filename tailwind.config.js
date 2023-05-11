@@ -6,6 +6,7 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    
     extend: {
     colors: {
       'gptbgd' : '#202123',
@@ -13,8 +14,8 @@ module.exports = {
       'offwhite' : '#ececf2',
       'gptgreen' : '#13b78a',
       'gptlight' : '#ececf1',
-      'gptgreend' :'#10A37F'
-
+      'gptgreend' :'#10A37F',
+      'darkwhite' : '#8e8ea0',
     }
     },
   },

@@ -6,8 +6,8 @@ import {
 
 export default function Home() {
   return (
-    <main className="bg-gptbgl h-screen text-offwhite overflow-y-auto">
-      <div>
+    <main className="bg-gptbgl h-screen text-offwhite overflow-y-auto ">
+      <div className="mb-12">
         {/* Main header */}
         <div className="text-center pt-44 font-semibold pb-10">
           <p>تحدث مع الذكاء الإصطناعي</p>

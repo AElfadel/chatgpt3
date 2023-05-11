@@ -7,7 +7,7 @@ import { authOptions } from "./api/auth/[...nextauth]";
 import { Provider } from "@/components/Provider";
 
 const noto = Noto_Naskh_Arabic({
-  weight: "400",
+  weight: ["400", "500", "600"],
   subsets: ["arabic"],
 });
 
@@ -24,11 +24,21 @@ export default async function RootLayout({
   const session = await getServerSession(authOptions);
 
   return (
-    <html lang="ar" dir="rtl" className="bg-gptbgl">
-      <body>
+    <html lang="ar" dir="rtl" className="overflow-y-clip overscroll-contain">
+      <body className={noto.className}>
         {/*PROVIDER MUST BE INSIDE THE BODY, NOT OUTSIDE*/}
         <Provider session={session}>
-          {!session ? <SignIn /> : <div>{children}</div>};
+          {!session ? (
+            <SignIn />
+          ) : (
+            <div className="flex">
+              <div className="min-h-screen overscroll-none">
+                <SideBar />
+              </div>
+              <div className="flex-1">{children}</div>
+            </div>
+          )}
+          ;
         </Provider>
       </body>
     </html>
