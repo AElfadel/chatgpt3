@@ -16,10 +16,4 @@ export const authOptions = {
   secret: process.env.NEXTAUTH_SECRET,
 
 }
-const handler =  NextAuth(authOptions)
-
-export { handler as GET, handler as POST }
-//iF YOU ARE TO USE THIS ROUTE.TS Then Handler is a must!
-
-
-
+export default NextAuth(authOptions)

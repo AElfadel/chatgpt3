@@ -3,7 +3,7 @@ import "./globals.css";
 import { Noto_Naskh_Arabic } from "next/font/google";
 import SignIn from "@/components/SignIn";
 import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+import { authOptions } from "./api/auth/[...nextauth]";
 import { Provider } from "@/components/Provider";
 
 const noto = Noto_Naskh_Arabic({
@@ -25,11 +25,12 @@ export default async function RootLayout({
 
   return (
     <html lang="ar" dir="rtl" className="bg-gptbgl">
-      <div>
+      <body>
+        {/*PROVIDER MUST BE INSIDE THE BODY, NOT OUTSIDE*/}
         <Provider session={session}>
-          {!session ? <SignIn /> : <body>{children}</body>};
+          {!session ? <SignIn /> : <div>{children}</div>};
         </Provider>
-      </div>
+      </body>
     </html>
   );
 }
