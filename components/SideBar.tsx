@@ -79,3 +79,19 @@ function SideBar() {
 }
 
 export default SideBar;
+
+//TODO: Summary // I need to initialize firebase.. connect the database to the sidebar so that the conversations I had get displayed in descending order.. so the newest at the top and oldest at the bottom. This will requiring mapping the data base.. but thats not the first step..
+
+//TODO: 1 - Design Database structure on firebase..
+
+//TODO: 2 - Create first document in Database
+
+//TODO: 3 - Display documents created in the sidebar chronlogically
+
+//TODO: 4 - ChatGPT 3 progress completed *thumbs up* I can then go back to complete the tutorial on chatgpt 2 to revise all the chatgpt stuff and connecting into their API.
+
+//TODO: 5 - Complete sudaniGPT1, then complete SudaniGPT2 then return to complete sudaniGPT3.
+
+//TODO: 6 - Start a different project. Build a blog so we can then show off this ChatGPT build in it with the beautiful Excalidraw diagrams and maaaayyybbeee a youtube video just to flex.
+
+//I will push these to github as well so they can work as learning map for next week inshallah. We are making excellent progress man. Keeo going and keep strong. Slowly but surley and we will arrive inshallah.
