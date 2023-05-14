@@ -3,11 +3,11 @@ import "./globals.css";
 import { Noto_Naskh_Arabic } from "next/font/google";
 import SignIn from "@/components/SignIn";
 import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]";
+import { authOptions } from "./api/auth/[...nextauth]/route";
 import { Provider } from "@/components/Provider";
 
 const noto = Noto_Naskh_Arabic({
-  weight: ["400", "500", "600"],
+  weight: ["variable"],
   subsets: ["arabic"],
 });
 

@@ -8,6 +8,7 @@ import {
   TrashIcon,
 } from "@heroicons/react/24/outline";
 import { useState, useEffect } from "react";
+import ChatRow from "./ChatRow";
 
 function SideBar() {
   const { data: session } = useSession();
@@ -28,15 +29,19 @@ function SideBar() {
   }, [isOpen]);
 
   return (
-    <div className="flex flex-col text-white min-w-[260px] text-center p-2 min-h-screen bg-gptbgd">
+    <div className="flex flex-col text-white min-w-[260px] text-center p-2 min-h-screen bg-gptbgd ">
       <div className="flex-1">
         <NewChat />
+
+        <div>
+          <ChatRow />
+        </div>
       </div>
       {session && (
         <div>
           {isOpen && (
             <div className="bg-gptblack bottom-full left-0 z-20 mb-2 w-full overflow-hidden rounded-md py-1.5 outline-none opacity-100 translate-y-0">
-              <button className="min-w-[260px] flex w-full items-center gap-2.5 hover:bg-gray-700 px-2 py-1">
+              <button className="min-w-[260px] flex w-full items-center gap-2.5 transition-colors duration-200 hover:bg-gray-700 px-2 py-2">
                 <TrashIcon className="w-5 h-5" />
                 <p className="grow overflow-hidden text-sm font-sans text-right m-2">
                   محو كل المحادثات
@@ -45,11 +50,11 @@ function SideBar() {
 
               <button
                 onClick={() => signOut()}
-                className="min-w-[260px] flex w-full items-center gap-2.5 hover:bg-gray-700 px-2 py-2"
+                className="min-w-[260px] flex w-full items-center gap-2.5 transition-colors duration-200 hover:bg-gray-700 px-2 py-2"
               >
                 <ArrowLeftOnRectangleIcon className="w-5 h-5" />
 
-                <p className="grow overflow-hidden text-sm font-sans text-right px-2 py-2">
+                <p className=" overflow-hidden text-sm font-sans text-right px-2 py-1 ">
                   تسجيل الخروج
                 </p>
               </button>
@@ -59,12 +64,13 @@ function SideBar() {
             onClick={() => setIsOpen((prev) => !prev)}
             className="border-t-[1px] border-darkwhite"
           >
-            <div className="min-w-[260px] flex w-full items-center gap-2.5 rounded-md px-1.5 text-sm hover:bg-gray-800 py-2">
+            <div className="min-w-[260px] flex w-full items-center gap-2.5 rounded-md px-1.5 text-sm transition-colors duration-200 hover:bg-gray-800 py-2">
               <img
                 src={session.user?.image!}
                 alt="user image"
                 className="w-6 h-6 rounded"
               />
+
               <p className="grow overflow-hidden text-sm font-sans text-right">
                 {session.user?.name!}
               </p>
@@ -80,11 +86,13 @@ function SideBar() {
 
 export default SideBar;
 
-//TODO: Summary // I need to initialize firebase.. connect the database to the sidebar so that the conversations I had get displayed in descending order.. so the newest at the top and oldest at the bottom. This will requiring mapping the data base.. but thats not the first step..
-
 //TODO: 1 - Design Database structure on firebase..
 
+//Done
+
 //TODO: 2 - Create first document in Database
+
+//Done
 
 //TODO: 3 - Display documents created in the sidebar chronlogically
 
