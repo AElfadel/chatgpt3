@@ -26,6 +26,10 @@ function ChatRow({ id }: Props) {
     router.push("/");
   };
 
+  const [messages] = useCollection(
+    collection(db, "users", session?.user?.email!, "chats", id, "messages")
+  );
+
   useEffect(() => {
     if (!pathname) return;
 
@@ -42,7 +46,10 @@ function ChatRow({ id }: Props) {
       >
         <div className="flex flex-1">
           <ChatBubbleLeftIcon className="w-4 h-4" />
-          <p className="px-2">محادثة جديدة</p>
+          <p className="px-2">
+            {messages?.docs[messages.docs.length - 1]?.data().text ||
+              "محادثة جديدة"}
+          </p>
           <div className="absolute inset-y-0 left-0 w-8 z-10 bg-gradient-to-r from-gptbgd group-hover:from-[#2A2B32]"></div>
         </div>
 
