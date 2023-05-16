@@ -15,14 +15,14 @@ export function NewChat() {
 
   const createNewChat = async () => {
     const doc = await addDoc(
-      collection(db, "users", session.user?.email!, "chats"),
+      collection(db, "users", session?.user?.email!, "chats"),
       {
-        userId: session.user?.email!,
+        userId: session?.user?.email!,
         createdAt: serverTimestamp(),
       }
       //^There we created a new collection called chats in the users documents! which will afterwords include messages.
     );
-    router.push(`/chats/${doc.id}`);
+    router.push(`/chat/${doc.id}`);
   };
 
   return (
