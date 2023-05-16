@@ -35,7 +35,7 @@ function SideBar() {
 
   //Next we're going to use react firebase hooks to update the sidebar whenever a new chat is created by quering firebase
 
-  const [chats, loading, error] = useCollection(
+  const [chats] = useCollection(
     session &&
       query(
         collection(db, "users", session.user?.email!, "chats"),
