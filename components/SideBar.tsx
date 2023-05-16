@@ -9,16 +9,11 @@ import {
 } from "@heroicons/react/24/outline";
 import { useState, useEffect } from "react";
 import ChatRow from "./ChatRow";
-import { collection, orderBy, query } from "firebase/firestore";
-import { useCollection } from "react-firebase-hooks/firestore";
-import { db } from "@/firebase";
 
 function SideBar() {
   const { data: session } = useSession();
-
   const [isOpen, setIsOpen] = useState(false);
 
-  //Here weve added a state to make the user settings popup dissapear after clicking
   useEffect(() => {
     function handleClickOutside() {
       setIsOpen(false);
@@ -33,26 +28,14 @@ function SideBar() {
     };
   }, [isOpen]);
 
-  //Next we're going to use react firebase hooks to update the sidebar whenever a new chat is created by quering firebase
-
-  const [chats, loading, error] = useCollection(
-    session &&
-      query(
-        collection(db, "users", session.user?.email!, "chats"),
-        orderBy("createdAt", "desc")
-      )
-  );
-
   return (
     <div className="flex flex-col text-white min-w-[260px] text-center p-2 min-h-screen bg-gptbgd ">
       <div className="flex-1">
         <NewChat />
-        <p className="text-darkwhite text-sm font-black text-right pr-4 py-3">
-          محادثاتك السابقة{" "}
-        </p>
-        {chats?.docs.map((chat) => (
-          <ChatRow key={chat.id} id={chat.id} />
-        ))}
+
+        <div>
+          <ChatRow />
+        </div>
       </div>
       {session && (
         <div>

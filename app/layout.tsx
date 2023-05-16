@@ -31,7 +31,7 @@ export default async function RootLayout({
           {!session ? (
             <SignIn />
           ) : (
-            <div className="flex bg-gptbgl">
+            <div className="flex">
               <div className="min-h-screen overscroll-none hidden sm:block">
                 <SideBar />
               </div>
