@@ -44,7 +44,7 @@ function SideBar() {
   );
 
   return (
-    <div className="flex flex-col text-white min-w-[260px] text-center p-2 min-h-screen bg-gptbgd ">
+    <div className="flex flex-col text-white max-w-[260px] text-center p-2 min-h-screen bg-gptbgd ">
       <div className="flex-1">
         <NewChat />
         <p className="text-darkwhite text-sm font-black text-right pr-4 py-3">
@@ -58,7 +58,7 @@ function SideBar() {
         <div>
           {isOpen && (
             <div className="bg-gptblack bottom-full left-0 z-20 mb-2 w-full overflow-hidden rounded-md py-1.5 outline-none opacity-100 translate-y-0">
-              <button className="min-w-[260px] flex w-full items-center gap-2.5 transition-colors duration-200 hover:bg-gray-700 px-2 py-2">
+              <button className="max-w-[260px] flex w-full items-center gap-2.5 transition-colors duration-200 hover:bg-gray-700 px-2 py-2">
                 <TrashIcon className="w-5 h-5" />
                 <p className="grow overflow-hidden text-sm font-sans text-right m-2">
                   محو كل المحادثات
@@ -67,7 +67,7 @@ function SideBar() {
 
               <button
                 onClick={() => signOut()}
-                className="min-w-[260px] flex w-full items-center gap-2.5 transition-colors duration-200 hover:bg-gray-700 px-2 py-2"
+                className="max-w-[260px] flex w-full items-center gap-2.5 transition-colors duration-200 hover:bg-gray-700 px-2 py-2"
               >
                 <ArrowLeftOnRectangleIcon className="w-5 h-5" />
 
@@ -81,7 +81,7 @@ function SideBar() {
             onClick={() => setIsOpen((prev) => !prev)}
             className="border-t-[1px] border-darkwhite"
           >
-            <div className="min-w-[260px] flex w-full items-center gap-2.5 rounded-md px-1.5 text-sm transition-colors duration-200 hover:bg-gray-800 py-2">
+            <div className="flex min-w-[240px] items-center gap-2.5 rounded-md px-1.5 text-sm transition-colors duration-200 hover:bg-gray-800 py-2">
               <img
                 src={session.user?.image!}
                 alt="user image"

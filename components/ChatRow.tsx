@@ -44,13 +44,13 @@ function ChatRow({ id }: Props) {
           active && "bg-gptbgl hover:bg-gptbgl"
         }`}
       >
-        <div className="flex flex-1">
+        <div className="flex flex-1 truncate">
           <ChatBubbleLeftIcon className="w-4 h-4" />
-          <p className="px-2">
+          <p className="px-2 max-w-[260px] ">
             {messages?.docs[messages.docs.length - 1]?.data().text ||
               "محادثة جديدة"}
           </p>
-          <div className="absolute inset-y-0 left-0 w-8 z-10 bg-gradient-to-r from-gptbgd group-hover:from-[#2A2B32]"></div>
+          <div className="absolute inset-y-0 left-0 w-8 z-10 bg-gradient-to-r  to-transparent from-gptbgd group-hover:from-[#2A2B32]"></div>
         </div>
 
         {active && (

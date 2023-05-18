@@ -5,6 +5,7 @@ import SignIn from "@/components/SignIn";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./api/auth/[...nextauth]/route";
 import { Provider } from "@/components/Provider";
+import ClientProvider from "@/components/ClientProvider";
 
 const noto = Noto_Naskh_Arabic({
   weight: ["variable"],
@@ -35,6 +36,8 @@ export default async function RootLayout({
               <div className="min-h-screen overscroll-none hidden sm:block">
                 <SideBar />
               </div>
+              <ClientProvider />
+              {/*You add the hot toaster notification as a client component in the client provider component*/}
               <div className="flex-1">{children}</div>
             </div>
           )}

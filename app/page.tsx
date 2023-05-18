@@ -14,9 +14,9 @@ export default function Home() {
           <h1 className="text-3xl font-sans font-bold">ChatGPT</h1>
         </div>
 
-        <div className="md:flex items-center text-center gap-3.5">
+        <div className="md:flex items-center text-center gap-3.5 px-4">
           {/* first info segment */}
-          <div className="pb-5 ">
+          <div className="pb-5">
             {/* Icons */}
             <div className="flex gap-2 px-2 justify-center pb-4">
               <SunIcon className="h-7 w-7" />
